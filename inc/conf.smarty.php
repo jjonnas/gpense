@@ -1,0 +1,33 @@
+<?php
+/**
+Arquivo de configurações basicas do Smarty
+Contem todas as declarações basicas para o funcionamento da engine smarty
+criado em 23/05/2008
+*/
+
+//incluindo a classe smarty no projeto
+require_once("smarty/Smarty.class.php");
+
+//instanciando um objeto smarty
+$smarty = new Smarty;
+
+//configurando diretorios necessarios ao smarty
+$smarty->template_dir = "templates/$template/";
+$smarty->compile_dir = 'templates_c/';
+$smarty->config_dir = 'inc/';
+$smarty->cache_dir = 'cache/';
+
+//delimitadores para as variaveis smarty {$variavel}
+$smarty->left_delimiter = '{{';
+$smarty->right_delimiter = '}}';
+
+//configuração de exibição do debug [1:debugar][0:não debugar]
+$smarty->debugging = 1;
+
+//criando uma pagina apartir do objeto smarty
+$pagina = $smarty;
+
+//adição da variavel template as templates smarty
+$pagina->assign("template",$template);
+
+?>
