@@ -56,33 +56,9 @@ class gabarito{
 	}
 	
 	function getResultado(){
-		$result = $this->dadosStr."<br>";
-		$result .= "Questões Certas: ".$this->getCertas()." :::::::::::::";
-		$result .= "Questões Erradas: ".$this->getErradas()."<br>";
-		$result .= "<table><tr>";
-		for($i=1;$i<=$this->numero_de_questoes;$i++){
-			$result .= "<td> ";
-			$result .= $i;
-			$result .= "</td> ";
-		}
-		$result .= "</tr><tr>";
-		for($i=1;$i<=$this->numero_de_questoes;$i++){
-			$result .= "<td> ";
-			if($this->comparacao[$i]){
-				$result .= $this->getQuestao($i)." ";
-			}else{
-				$result .= "<b>".$this->getQuestao($i)."</b> ";
-			}
-			
-			$result .= "</td> ";
-		}
-		$result .= "</tr><tr>";
-		for($i=1;$i<=$this->numero_de_questoes;$i++){
-			$result .= "<td> ";
-			$result .= $this->oficial[$i]." ";
-			$result .= "</td> ";
-		}
-		$result .= "</tr></table>";
+		$result = array();
+		$result['numero'] = $this->dados[5];
+		$result['pontos'] = $this->getCertas();
 		return $result;
 	}
 	
