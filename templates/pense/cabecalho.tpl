@@ -2,12 +2,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Pense</title>
+		<title>Gabaritos - Pense</title>
 	</head>
 	<body>
-		<table border="1">
+		<center>
+		<table border="0" width="700px">
 			<tr>
-				<td colspan="3">Pense </td>
+				<td align="center"><img src="img/logo.gif" /><img src="img/pense.jpg" /> </td>
 			</tr>
-			<tr>
-				<td width="200px">
