@@ -19,6 +19,8 @@ foreach ($lines as $line_num => $line) {
 	$gabarito->getFromStr($gab);
 	$gabarito->comparaComOficial($gabaritooficial);
 	$gabarray = $gabarito->getResultado();
+	$gabdisarray = $gabarito->getResultadoFromDisciplinas();
+	$gabarray['disciplinas'] = $gabdisarray;
 	$gabarray['classificacao'] = $i;
 	$agabaritos[] = $gabarray;
 	$i++;

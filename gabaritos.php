@@ -9,6 +9,6 @@ for($i=0;$i<60;$i++){
 
 $pagina->assign("indice", $indice);
 
-//$pagina->display("gabarito.input.tpl");
-$pagina->display("gabarito.radio.tpl");
+$pagina->display("gabarito.input.preenchido.tpl");
+//$pagina->display("gabarito.radio.tpl");
 ?>
