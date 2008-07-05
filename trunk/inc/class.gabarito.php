@@ -62,6 +62,22 @@ class gabarito{
 		return $result;
 	}
 	
+	function getResultadoFromDisciplinas(){
+		$result = array("Fisica"=>0, "Quimica"=>0, "Biologia"=>0, "Matematica"=>0);
+		$d=0;
+		$disciplinas = array("Fisica", "Quimica", "Biologia", "Matematica");
+		for($i=1; $i<$this->numero_de_questoes; $i+=15){
+			$disciplina = $disciplinas[$d];
+			$d++;
+			for($j=$i; $j<$i+15 ; $j++){
+				if($this->comparacao[$j]){
+					$result[$disciplina]++;
+				}
+			}
+		}
+		return $result;
+	}
+	
 	function getQuestao($i){
 		return $this->questao[$i];
 	}

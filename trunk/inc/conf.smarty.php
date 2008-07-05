@@ -22,7 +22,7 @@ $smarty->left_delimiter = '{{';
 $smarty->right_delimiter = '}}';
 
 //configuração de exibição do debug [1:debugar][0:não debugar]
-$smarty->debugging = 0;
+$smarty->debugging = 1;
 
 //criando uma pagina apartir do objeto smarty
 $pagina = $smarty;
