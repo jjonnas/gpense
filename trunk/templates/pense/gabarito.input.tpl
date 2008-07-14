@@ -10,6 +10,7 @@
 						<tr><td>Gabarito dos Alunos<br><textarea name="gabaritos" cols="80" rows="15"></textarea></td></tr>
 						<tr><td><input name="verificar" value="Verificar" type="submit" /> <input value="Cancelar" type="reset"></td></tr>
 					</table>
+                    <input type="hidden" name="tipo" value="input" />
 					</form>
 				</td>
 				{{include file="rodape.tpl"}}
