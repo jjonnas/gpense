@@ -1,9 +1,25 @@
 <?php
 require_once("main.php");
+$tipo = $_POST["tipo"];
+if($tipo == "radio"){
+	$g = "goficial";
+	$gabostr = "";
+	for($i=0;$i<=60;$i++){
+		$gstr = "$g$i";
+		$gabostr .= $_POST[$gstr][0];
+	}
+}elseif($tipo == "input"){
+	$gabostr = $_POST["goficial"];
+}
 $sala = $_POST['sala'];
-$gabostr = $_POST["goficial"];
+
 $gabaritos = $_POST["gabaritos"];
 $ordena = $_POST["ordena"];
+
+echo "<pre>";
+var_dump($gabostr);
+echo "</pre>";
+
 $gabaritooficial = new gabarito();
 $gabaritooficial->getFromStr($gabostr);
 $lines = explode("\n",$gabaritos);
@@ -19,8 +35,6 @@ foreach ($lines as $line_num => $line) {
 	$gabarito->getFromStr($gab);
 	$gabarito->comparaComOficial($gabaritooficial);
 	$gabarray = $gabarito->getResultado();
-	$gabdisarray = $gabarito->getResultadoFromDisciplinas();
-	$gabarray['disciplinas'] = $gabdisarray;
 	$gabarray['classificacao'] = $i;
 	$agabaritos[] = $gabarray;
 	$i++;

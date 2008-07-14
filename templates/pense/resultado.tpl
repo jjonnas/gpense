@@ -4,9 +4,9 @@
 					<td align="center">
 						<table border="1">
 							<tr><td colspan="7">Resultados: {{$sala}}</td></tr>
-							<tr><td>Classificação</td><td>Número</td><td>Fisica</td><td>Quimica</td><td>Biologia</td><td>Matematica</td><td>Pontos</td></tr>
+							<tr><td>Classificação</td><td>Número</td><td>Fisica</td><td>Matematica</td><td>Quimica</td><td>Biologia</td><td>Pontos</td></tr>
 							{{foreach from=$gabaritos item=gabarito}}
-							<tr><td>{{$gabarito.classificacao}}</td><td>{{$gabarito.numero}}</td><td>{{$gabarito.disciplinas.Fisica}}</td><td>{{$gabarito.disciplinas.Quimica}}</td><td>{{$gabarito.disciplinas.Biologia}}</td><td>{{$gabarito.disciplinas.Matematica}}</td><td>{{$gabarito.pontos}}</td></tr>
+							<tr><td>{{$gabarito.classificacao}}</td><td>{{$gabarito.numero}}</td><td>{{$gabarito.disciplinas.Fisica}}</td><td>{{$gabarito.disciplinas.Matematica}}</td><td>{{$gabarito.disciplinas.Quimica}}</td><td>{{$gabarito.disciplinas.Biologia}}</td><td>{{$gabarito.pontos}}</td></tr>
 							{{/foreach}}
 						</table>
 					</td>

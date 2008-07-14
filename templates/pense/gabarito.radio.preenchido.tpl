@@ -1,12 +1,36 @@
 				{{include file="cabecalho.tpl"}}
 				{{include file="menu.tpl"}}
-				<td colspan="2">Centro
+				<td colspan="2">
 					<form action="processagabarito.php" method="post">
 					<table>
 						<tr><td>Preenchimento de gabaritos</td></tr>
 						<tr><td>Sala<input type="text" name="sala" size="30" value="Sala 1 - A"></td></tr>
-						<tr><td>Gabarito Oficial<input type="text" name="goficial" size="80" value="DCCCAEDDBCAEAEADEADCBBDDACADBAADAACAD ADBDEDACDDBEDEEECCBBCB"></td></tr>
-						<tr><td><label>Ordenar pela pontuaÃ§Ã£o<input type="checkbox" name="ordena" value="pontos" checked="checked" /></label></td></tr>
+						<tr>
+							<td>Gabarito Oficial
+                            	<table border="1" >
+									<tr>
+                                    	<td style="background-color:#999">&nbsp;</td>
+                                        <td style="background-color:#999">A</td>
+                                        <td style="background-color:#999">B</td>
+                                        <td style="background-color:#999">C</td>
+                                        <td style="background-color:#999">D</td>
+                                        <td style="background-color:#999">E</td>
+									</tr>
+									
+										{{foreach from=$indice item=i}}
+                                    <tr>
+                                        <td style="background-color:#999">{{$i}}</td>
+                                        <td style="background-color:#ddd"><label> A<input type="radio" name="goficial{{$i}}[]" value="A" checked="checked" /></label></td>
+                                        <td><label> B<input type="radio" name="goficial{{$i}}[]" value="B" /></label></td>
+                                        <td style="background-color:#ddd"><label> C<input type="radio" name="goficial{{$i}}[]" value="C" /></label></td>
+                                        <td><label> D<input type="radio" name="goficial{{$i}}[]" value="D" /></label></td>
+                                        <td style="background-color:#ddd"><label> E<input type="radio" name="goficial{{$i}}[]" value="E" /></label></td>
+                                   </tr>
+										{{/foreach}}
+								</table>
+							</td>
+						</tr>
+						<tr><td><label>Ordenar pela pontuação<input type="checkbox" name="ordena" value="pontos" checked="checked" /></label></td></tr>
 						<tr><td>Gabarito dos Alunos<br><textarea name="gabaritos" cols="80" rows="15">729000001001062608001Y  5311 #0001    N 11   1    DABDAEDDBBADCCCBAACDCACEACBABCBDAACBDDADACABDDADBEAEBBADBACC
 729000002001062608001Y  5311 #0001    N 11   2    DCDCAEDABCBEAEAABADCBBEDBBCBBCAACACAD ADBEDDCADDBEBDBECDBCBB
 729000003001062608001Y  5311 #0001    N 11   3    BCDCAEDACEDACCCBABACADDECABBDDAABAACABEBCAECBAEDBEAEEACACCBB
@@ -36,7 +60,7 @@
 729000027001062608001Y  5311 #0001    N 11  32    DABCAEBDABACDEACAEBDACBEAACBACBCCDDCDBECBCEDDE ECABCDECADBEC</textarea></td></tr>
 						<tr><td><input name="verificar" value="Verificar" type="submit" /> <input value="Cancelar" type="reset"></td></tr>
 					</table>
-                    <input type="hidden" name="tipo" value="input" />
+                    <input type="hidden" name="tipo" value="radio" />
 					</form>
 				</td>
 				{{include file="rodape.tpl"}}
